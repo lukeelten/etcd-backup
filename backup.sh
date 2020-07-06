@@ -1,8 +1,9 @@
 #!/bin/bash
 
+self=$(hostname)
 ns="openshift-etcd"
 container="etcdctl"
-pod=$(oc get po -n $ns --no-headers | grep etcd | grep Running | head -1 | awk '{print $1}')
+pod=$(oc get po -n $ns --no-headers | grep etcd | grep -v "$self" | grep Running | head -1 | awk '{print $1}')
 name="backup-$(date +%Y-%m-%d)"
 tmp_dir="/tmp"
 
