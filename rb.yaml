@@ -1,0 +1,17 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  creationTimestamp: "2020-07-06T15:49:55Z"
+  name: etcd-backup-rb
+  namespace: openshift-etcd
+  resourceVersion: "2888521"
+  selfLink: /apis/rbac.authorization.k8s.io/v1/namespaces/openshift-etcd/rolebindings/etcd-backup-rb
+  uid: 62b33d91-cbda-4afe-b1f7-986a9d147583
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: etcd-backup
+subjects:
+- kind: ServiceAccount
+  name: etcd-backup
+  namespace: openshift-etcd

@@ -1,0 +1,40 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  creationTimestamp: "2020-07-06T15:42:33Z"
+  labels:
+    name: etcd-backup
+  name: etcd-backup
+  namespace: openshift-etcd
+  resourceVersion: "2895310"
+  selfLink: /apis/build.openshift.io/v1/namespaces/openshift-etcd/buildconfigs/etcd-backup
+  uid: f552a2ab-2842-4f13-81c5-9117637c1fcc
+spec:
+  failedBuildsHistoryLimit: 5
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: etcd-backup:latest
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    git:
+      uri: https://github.com/lukeelten/etcd-backup.git
+    type: Git
+  strategy:
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        name: ose-cli:v4.4
+        namespace: openshift
+    type: Docker
+  successfulBuildsHistoryLimit: 5
+  triggers:
+  - imageChange:
+      lastTriggeredImageID: image-registry.openshift-image-registry.svc:5000/openshift/ose-cli@sha256:e4bb46d776c7916ea5301f5ae5b29f53ecfaffeff0fd197dcc27302ee691f994
+    type: ImageChange
+  - type: ConfigChange
+status:
+  lastVersion: 2

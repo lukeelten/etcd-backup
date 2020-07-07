@@ -1,0 +1,14 @@
+apiVersion: v1
+imagePullSecrets:
+- name: etcd-backup-dockercfg-bfsbb
+kind: ServiceAccount
+metadata:
+  creationTimestamp: "2020-07-06T15:46:45Z"
+  name: etcd-backup
+  namespace: openshift-etcd
+  resourceVersion: "2885692"
+  selfLink: /api/v1/namespaces/openshift-etcd/serviceaccounts/etcd-backup
+  uid: ed728bb1-2b2a-465e-88e2-4fa6f4be281f
+secrets:
+- name: etcd-backup-token-2cxrw
+- name: etcd-backup-dockercfg-bfsbb

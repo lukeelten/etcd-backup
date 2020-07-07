@@ -1,0 +1,26 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  creationTimestamp: "2020-07-06T15:24:53Z"
+  generation: 2
+  name: etcd-backup
+  namespace: openshift-etcd
+  resourceVersion: "2895807"
+  selfLink: /apis/image.openshift.io/v1/namespaces/openshift-etcd/imagestreams/etcd-backup
+  uid: 91255280-6bc4-4152-8ef0-9b8f22179ac6
+spec:
+  lookupPolicy:
+    local: true
+status:
+  dockerImageRepository: image-registry.openshift-image-registry.svc:5000/openshift-etcd/etcd-backup
+  tags:
+  - items:
+    - created: "2020-07-06T15:58:08Z"
+      dockerImageReference: image-registry.openshift-image-registry.svc:5000/openshift-etcd/etcd-backup@sha256:89548e811468b91bfeb30bff6855e6dec44c1763ac365ee2e45d12434b5a4213
+      generation: 2
+      image: sha256:89548e811468b91bfeb30bff6855e6dec44c1763ac365ee2e45d12434b5a4213
+    - created: "2020-07-06T15:43:07Z"
+      dockerImageReference: image-registry.openshift-image-registry.svc:5000/openshift-etcd/etcd-backup@sha256:22f263a95f75ce949f6bdc37cad2830452941ce594710d03c4097c19ccad5732
+      generation: 1
+      image: sha256:22f263a95f75ce949f6bdc37cad2830452941ce594710d03c4097c19ccad5732
+    tag: latest

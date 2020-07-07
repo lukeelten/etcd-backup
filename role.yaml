@@ -1,0 +1,24 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  creationTimestamp: "2020-07-06T15:49:26Z"
+  name: etcd-backup
+  namespace: openshift-etcd
+  resourceVersion: "2888124"
+  selfLink: /apis/rbac.authorization.k8s.io/v1/namespaces/openshift-etcd/roles/etcd-backup
+  uid: c025f4a7-e7b1-4226-914d-f0ef77690fb5
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  verbs:
+  - get
+  - watch
+  - list
+- apiGroups:
+  - ""
+  resources:
+  - pods/exec
+  verbs:
+  - '*'
